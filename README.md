@@ -333,31 +333,26 @@ mission-control/
 
 ## 🔧 Troubleshooting
 
-<details>
-<summary><strong>Can't connect to OpenClaw Gateway</strong></summary>
+### Can't connect to OpenClaw Gateway
 
 1. Check OpenClaw is running: `openclaw gateway status`
 2. Verify URL and token in `.env.local`
 3. Check firewall isn't blocking port 18789
-</details>
 
-<details>
-<summary><strong>Planning questions not loading</strong></summary>
+### Planning questions not loading
 
 1. Check OpenClaw logs: `openclaw gateway logs`
 2. Verify your AI API key is valid
 3. Refresh and click the task again
-</details>
 
-<details>
-<summary><strong>Port 4000 already in use</strong></summary>
+### Port 4000 already in use
 
 ```bash
 lsof -i :4000
 kill -9 <PID>
 ```
-<details>
-<summary><strong>Agent callbacks failing behind a proxy (502 errors)</strong></summary>
+
+### Agent callbacks failing behind a proxy (502 errors)
 
 If you're behind an HTTP proxy (corporate VPN, Hiddify, etc.), agent callbacks to `localhost` may fail because the proxy intercepts local requests.
 
@@ -375,7 +370,6 @@ docker run -e NO_PROXY=localhost,127.0.0.1 ...
 ```
 
 See [Issue #30](https://github.com/crshdn/mission-control/issues/30) for details.
-</details>
 
 ---
 
